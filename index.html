@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>This One is for My Pookie</title>
+  <style type="text/css">
+    @font-face {
+      font-family: digit;
+      src: url('digital-7_mono.ttf') format("truetype");
+    }
+  </style>
+  <link href="css/default.css" type="text/css" rel="stylesheet">
+  <script src="js/jquery.js"></script>
+  <script src="js/garden.js"></script>
+  <script src="js/functions.js"></script>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <div id="content">
+      <div id="code">
+        <span class="comments">/**</span><br />
+        <span class="space"/><span class="comments"> * THE CODE OF US </span><br />
+        <span class="space"/><span class="comments"> */</span><br />
+        Hey Cecilia ♡<br />
+        Do you remember when we first started talking?<br />
+        <span class="comments">// A voice call, a game, a spark.</span><br />
+        That day, something quietly clicked inside me;<br />
+        <span class="comments">// Your laugh, your voice, your warmth.</span><br />
+        You slipped into my life like you belonged there.<br />
+        Day by day, message by message;<br />
+        This bond kept blooming quietly;<br />
+        From strangers to soul echoes;<br />
+        We've written a story without even trying.<br />
+        There were laughs, silences, and even sadness;<br />
+        <span class="comments">// But even silence with you felt safe.</span><br />
+        And even when fears show up,<br />
+        I don’t want to run. I want to choose you.<br />
+        <br /><br />
+        So here it is:<br />
+        I care deeply for you, more than I could ever explain.<br />
+        And I hope this is just the beginning of our weird little story.<br />
+        <br /><br />
+        Touch the heart below whenever you need a reminder.<br />
+        <br />
+        <span id="heartspan">
+          <a href="image-of-bubba-or-us.jpg" target="_blank" title="Here's our little heart moment">
+            <i class="fas fa-heart" id="icon"></i>
+          </a>
+        </span>
+      </div>
+	 <div id="loveu" class="typewriter align-center">
+            I FREAKING <br /> ADORE YOU<br />
+      </div>
+
+
+      <div id="loveHeart">
+        <canvas id="garden"></canvas>
+        <div id="words">
+          <div id="messages">
+            MOHAMMED & CECILIA — SINCE THE FIRST "HEY"
+            <div id="elapseClock"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var offsetX = $("#loveHeart").width() / 2;
+    var offsetY = $("#loveHeart").height() / 2 - 55;
+
+    var together = new Date();
+    together.setFullYear(2025, 5, 15); // Change to actual date: year, month (0-indexed), day
+    together.setHours(16);
+    together.setMinutes(30);
+    together.setSeconds(0);
+    together.setMilliseconds(0);
+
+    if (!document.createElement('canvas').getContext) {
+      var msg = document.createElement("div");
+      msg.id = "errorMsg";
+      msg.innerHTML = "Your browser doesn't support HTML5!<br/>Please use Chrome, Firefox, or Safari ❤️";
+      document.body.appendChild(msg);
+      $("#code").hide();
+    } else {
+      setTimeout(startHeartAnimation, 5000);
+      timeElapse(together);
+      setInterval(() => timeElapse(together), 500);
+      adjustCodePosition();
+      $("#code").typewriter();
+    }
+  </script>
+</body>
+</html>
